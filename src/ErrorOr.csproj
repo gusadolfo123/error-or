@@ -8,15 +8,15 @@
 
   <PropertyGroup>
     <PackageId>Custom.ErrorOr</PackageId>
-    <Version>1.2.1</Version>
-    <Authors>Amichai Mantinband</Authors>
+    <Version>1.2.2</Version>
+    <Authors>gusadolfo123</Authors>
     <PackageIcon>icon-square.png</PackageIcon>
-    <PackageTags>Result,Results,ErrorOr,Error,Handling</PackageTags>
-    <Description>A simple, fluent discriminated union of an error or a result.</Description>
-    <PackageProjectUrl>https://github.com/amantinband/error-or</PackageProjectUrl>
+    <PackageTags>Result,Results,ErrorOr,Error,Handling.</PackageTags>
+    <Description>A simple, fluent discriminated union of an error or a result. This repository only has extra properties compared to the original one. Original repository ErrorOr by Amichai Mantinband</Description>
+    <PackageProjectUrl>https://github.com/gusadolfo123/error-or</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <licenses>https://opensource.org/licenses/MIT</licenses>
-    <RepositoryUrl>https://github.com/amantinband/error-or</RepositoryUrl>
+    <RepositoryUrl>https://github.com/gusadolfo123/error-or</RepositoryUrl>
     <PackageOutputPath>../artifacts/</PackageOutputPath>
   </PropertyGroup>
 
