@@ -85,6 +85,25 @@ public readonly record struct Error
         string description = "A failure has occurred.") =>
         new(code, description, ErrorType.Failure);
 
+    public static Error Failure(
+        string code,
+        string description,
+        string detail) =>
+        new(code, description, ErrorType.Validation, detail);
+
+    public static Error Failure(
+        string code,
+        string description,
+        IEnumerable<string> parameters) =>
+        new(code, description, ErrorType.Validation, parameters);
+
+    public static Error Failure(
+        string code,
+        string description,
+        string detail,
+        IEnumerable<string> parameters) =>
+        new(code, description, ErrorType.Validation, detail, parameters);
+
     /// <summary>
     /// Creates an <see cref="Error"/> of type <see cref="ErrorType.Unexpected"/> from a code and description.
     /// </summary>
@@ -120,6 +139,12 @@ public readonly record struct Error
     public static Error Validation(
         string code,
         string description,
+        IEnumerable<string> parameters) =>
+        new(code, description, ErrorType.Validation, parameters);
+
+    public static Error Validation(
+        string code,
+        string description,
         string detail,
         IEnumerable<string> parameters) =>
         new(code, description, ErrorType.Validation, detail, parameters);
@@ -144,6 +169,19 @@ public readonly record struct Error
         string description = "A 'Not Found' error has occurred.") =>
         new(code, description, ErrorType.NotFound);
 
+    public static Error NotFound(
+        string code = "General.NotFound",
+        string description = "A 'Not Found' error has occurred.",
+        string detail = "") =>
+        new(code, description, ErrorType.NotFound, detail);
+
+    public static Error NotFound(
+        string code,
+        string description,
+        string detail,
+        IEnumerable<string> parameters) =>
+        new(code, description, ErrorType.NotFound, detail, parameters);
+
     /// <summary>
     /// Creates an <see cref="Error"/> with the given numeric <paramref name="type"/>,
     /// <paramref name="code"/>, and <paramref name="description"/>.
@@ -164,4 +202,12 @@ public readonly record struct Error
         string code,
         string description) =>
         new(code, description, (ErrorType)type);
+
+    public static Error Custom(
+        int type,
+        string code,
+        string description,
+        string detail,
+        IEnumerable<string> parameters) =>
+        new(code, description, (ErrorType)type, detail, parameters);
 }
